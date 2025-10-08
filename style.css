@@ -1,26 +1,120 @@
+/* Reset default margins and ensure smooth scrolling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #1e3a8a, #c4b5fd); /* Softer, modern gradient */
+  color: #1f2937; /* Dark gray for better contrast */
   text-align: center;
-  background: linear-gradient(to right, #0927ad, #c2aaa2);
-  padding: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
+/* Main heading with modern typography */
 h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Input field styling */
+#commandInput {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+#commandInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Button styling with modern hover effects */
 button {
-  padding: 10px 20px;
-  font-size: 1.2em;
-  background-color: #161510;
-  color: rgb(118, 22, 22);
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #3b82f6; /* Vibrant blue */
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-#status {
-  margin-top: 30px;
-  font-size: 1.2em;
+button:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Status/output section */
+#status, #jervisOutput {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #commandInput {
+    font-size: 1rem;
+    padding: 10px 14px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  #status, #jervisOutput {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  body {
+    padding: 15px;
+  }
 }
